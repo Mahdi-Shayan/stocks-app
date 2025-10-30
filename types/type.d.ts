@@ -35,3 +35,10 @@ export interface ConditionOptionsType {
   value: "greater" | "less";
   label: string;
 }
+
+export interface FormFieldsType {
+  name: string;
+  label: string;
+  type: "text" | "email" | "password" | "select";
+  items?: string[];
+}

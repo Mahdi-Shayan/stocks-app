@@ -4,7 +4,8 @@ import {
   InvestmentGoalsType,
   PreferredIndustriesType,
   RiskToleranceOptionsType,
-} from "@/type";
+  FormFieldsType,
+} from "@/types/type";
 
 export const NAV_ITEMS: { href: string; label: string }[] = [
   { href: "/", label: "Dashboard" },
@@ -42,6 +43,43 @@ export const ALERT_TYPE_OPTIONS: AlertTypeOptionsType[] = [
 export const CONDITION_OPTIONS: ConditionOptionsType[] = [
   { value: "greater", label: "Greater than (>)" },
   { value: "less", label: "Less than (<)" },
+];
+
+// Sign-in form fields
+export const SIGNIN_FORM_FIELDS: FormFieldsType[] = [
+  { name: "email", label: "Email", type: "email" },
+  { name: "password", label: "Password", type: "password" },
+];
+
+export const SIGNUP_FORM_FIELDS: FormFieldsType[] = [
+  { name: "fullName", label: "Full Name", type: "text" },
+  { name: "email", label: "Email", type: "email" },
+  { name: "password", label: "Password", type: "password" },
+  { name: "country", label: "Country", type: "select", items: [] },
+  {
+    name: "investmentGoals",
+    label: "Investment Goals",
+    type: "select",
+    items: INVESTMENT_GOALS.map((item) => {
+      return item.label;
+    }),
+  },
+  {
+    name: "riskTolerance",
+    label: "Risk Tolerance",
+    type: "select",
+    items: RISK_TOLERANCE_OPTIONS.map((item) => {
+      return item.label;
+    }),
+  },
+  {
+    name: "preferredIndustry",
+    label: "Preferred Industry",
+    type: "select",
+    items: PREFERRED_INDUSTRIES.map((item) => {
+      return item.label;
+    }),
+  },
 ];
 
 // TradingView Charts
@@ -119,7 +157,7 @@ export const HEATMAP_WIDGET_CONFIG = {
   hasSymbolTooltip: true,
   isMonoSize: false,
   width: "100%",
-  height: "600",
+  height: 600,
 };
 
 export const TOP_STORIES_WIDGET_CONFIG = {
@@ -130,7 +168,7 @@ export const TOP_STORIES_WIDGET_CONFIG = {
   locale: "en",
   market: "stock",
   width: "100%",
-  height: "600",
+  height: 600,
 };
 
 export const MARKET_DATA_WIDGET_CONFIG = {
